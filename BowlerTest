@@ -1,0 +1,54 @@
+import javax.swing.JOptionPane;
+
+public class BowlerTest {
+
+	public static void main(String[] args) 
+	{
+		
+		//Class variable = new Class(System.in);
+		//bowler_class Homer = new bowler_class("Homer Simpson",2);
+		//Print out 
+		//System.out.println(Homer.getName());
+		//Homer.addScore(4);
+		//System.out.println(Homer.getAverage());
+		
+		//New and improved version
+		
+		String name = JOptionPane.showInputDialog("Enter the bowler name");
+		
+		//Declare string for user input 
+		String input = "";
+		
+		
+		boolean run = true;
+		
+		Bowler playerOne = new Bowler(name);
+		
+		//print the bowler name and average
+		
+		while(run)
+		{
+			
+			input = JOptionPane.showInputDialog("Would you like to bowl? Enter yes or no");
+			
+			if(input.equalsIgnoreCase("yes"))
+			{
+				//ask the user to enter the score
+				input = JOptionPane.showInputDialog("Enter score");
+				int score = Integer.parseInt(input);
+				//ask the user to enter the score
+				playerOne.addScore(score);
+				
+			}
+			else
+				run = false;
+				
+		}
+		//print updated bowler information
+		System.out.println("Bowler Name: " + playerOne.getName());
+		System.out.println("Bowler's average: " + playerOne.getAverage());
+		System.out.println("");
+		JOptionPane.showMessageDialog(null, "Have a nice day");
+	}
+
+}
