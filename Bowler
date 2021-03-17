@@ -1,0 +1,49 @@
+/*
+ * This class is the template for creating instances for bowlers.
+ * It tracks number of games played and total points.
+ * methods can be used 
+ */
+
+public class Bowler 
+{
+	//declare instance variables to track name, total points and games played 
+	
+	private String name;
+	private int totalPoints;
+	private int games;
+	
+	//Instance Variable
+	//constructor to initialize the instance variables
+	public Bowler(String theName)
+	{
+		name = theName;
+		totalPoints = 0;
+		games = 0;
+	}
+	//methods to access fields and change the state of the object (getter and setter)
+	//accessor
+	public String getName()
+	{
+		return name;
+	}
+	//mutator method to adds a score for a game played
+	public void addScore (int score)
+	{
+		totalPoints= totalPoints + score;
+		//totalPoints+= score; shortcut for line 30
+		games++;
+	}
+	
+	public double getAverage()
+	{
+		if(games==0)
+		{
+			return 0;
+		}
+		else
+		{
+			return totalPoints/games;
+		}
+	}
+}
+
